@@ -16,8 +16,6 @@ public class Call {
         change(ns.primitiveNumber, ns.numbers, null);
         System.out.println(ns.primitiveNumber);
         System.out.println(ns.numbers[0]);
-
-
     }
 
     public static class NumberSet {
