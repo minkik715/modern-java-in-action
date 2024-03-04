@@ -1,6 +1,7 @@
 package dynamic_parameter;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -16,6 +17,10 @@ public class DynamicAppleFilterExample {
         List<Apple> heavyApples = Apple.filterApple(sampleApples, (Apple a) -> a.weight > 15);
 
         List<Apple> redAmdHeavy = filter(Apple.getSampleApple(), (Apple a) -> (a.weight > 15 && a.color.equals("RED")));
+
+        redAmdHeavy.sort(Comparator.comparingInt((Apple a) -> a.weight));
+
+
     }
 
 
@@ -23,7 +28,7 @@ public class DynamicAppleFilterExample {
         List<T> result = new ArrayList<>();
 
         for (T t : list) {
-            if(p.test(t)){
+            if (p.test(t)) {
                 result.add(t);
             }
         }
